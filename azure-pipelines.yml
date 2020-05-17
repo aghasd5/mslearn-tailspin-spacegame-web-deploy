@@ -160,7 +160,7 @@ stages:
               sqlPassword: '$(adminPassword)'
               deployType: 'DacpacTask'
               deploymentAction: 'Publish'
-              dacpacFile: '$(Pipeline.Workspace)/dropDacpac/Tailspin.SpaceGame.Database/bin/debug/Tailspin.Database.dacpac'
+              dacpacFile: '$(Pipeline.Workspace)/dropDacpac/Tailspin.SpaceGame.Database/bin/Debug/Tailspin.Database.dacpac'
               ipDetectionMethod: 'AutoDetect'
 
 
