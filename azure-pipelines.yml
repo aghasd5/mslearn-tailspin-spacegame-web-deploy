@@ -100,7 +100,7 @@ stages:
   jobs:
   - deployment: DBAVerificationScript
     pool:
-      vmImage: 'window-2019'
+      vmImage: 'windows-2019'
     variables:
     - group: 'Release'
     environment: 'dbaverificationscript'
@@ -138,7 +138,7 @@ stages:
   jobs:
   - deployment:  DBAVerificationApply
     pool:
-      vmImage: 'window-2019'
+      vmImage: 'windows-2019'
     variables:
     - group:  'Release'
     environment: 'dbaverificationapply'
