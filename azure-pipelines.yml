@@ -110,7 +110,7 @@ stages:
           steps:
           - download: current
             artifact: dropDacpac
-            pattern: '**/*'
+            patterns: '**/*'
           - task: SqlAzureDacpacDeployment@1
             displayName: Generate schema change script
             inputs:
