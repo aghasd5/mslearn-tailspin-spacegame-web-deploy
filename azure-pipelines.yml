@@ -226,7 +226,7 @@ stages:
                   Type  = "Vsts"
                   Variables = $vars
                 }
-              Update-VSTeamVariableGroup  @methodParameters
+                Update-VSTeamVariableGroup  @methodParameters
 
 
 - stage: 'Dev'
