@@ -142,7 +142,7 @@ stages:
 
                 # Check for Schema changes
                 $file = Get-Content "d:\a\1\s\GeneratedOutputFiles\$(databasename)_Script.sql"
-                $conatainsWord = $file | %{$_ -match "CREATE" or $_ -match "ALTER" or $_ -match "DROP"}
+                $conatainsWord = $file | %{$_ -match "CREATE" -or $_ -match "ALTER" -or $_ -match "DROP"}
                 if  ($conatainsWord -contains $true)
                 {
                   Install-Module VSTeam -Scope CurrentUser -Force
