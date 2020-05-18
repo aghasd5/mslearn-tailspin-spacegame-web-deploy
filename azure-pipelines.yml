@@ -157,7 +157,7 @@ stages:
                   $varName  = "schemachanged"
                   $vars.$varName= @{}
                   $vars.$varName.value  = "True"
-                  $vars.%varName.isSecret = $false
+                  $vars.$varName.isSecret = $false
                   $methodParameters = @{
                     id  = $vg.id
                     ProjectName = "$(System.TeamProject)"
