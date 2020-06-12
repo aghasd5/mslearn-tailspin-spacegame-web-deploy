@@ -11,7 +11,7 @@ namespace UITests
 {
     [TestFixture("Chrome")]
     [TestFixture("Firefox")]
-    [TestFixture("IE")]
+    // [TestFixture("IE")]
     public class HomePageTest
     {
         private string browser;
@@ -41,15 +41,15 @@ namespace UITests
                   case "Firefox":
                     driver = new FirefoxDriver(cwd);
                     break;
-                  case "IE":
-                    driver = new InternetExplorerDriver(cwd);
-                    break;
+                //   case "IE":
+                //     driver = new InternetExplorerDriver(cwd);
+                //     break;
                   default:
                     throw new ArgumentException($"'{browser}': Unknown browser");
                 }
 
                 // Wait until the page is fully loaded on every page navigation or page reload.
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
                 // Navigate to the site.
                 // The site name is stored in the SITE_URL environment variable to make 
@@ -58,7 +58,7 @@ namespace UITests
                 driver.Navigate().GoToUrl(url + "/");
 
                 // Wait for the page to be completely loaded.
-                new WebDriverWait(driver, TimeSpan.FromSeconds(10))
+                new WebDriverWait(driver, TimeSpan.FromSeconds(5))
                     .Until(d => ((IJavaScriptExecutor) d)
                         .ExecuteScript("return document.readyState")
                         .Equals("complete"));
@@ -121,7 +121,7 @@ namespace UITests
             Assert.That(modalWasDisplayed, Is.True);
         }
 
-        private IWebElement FindElement(By locator, IWebElement parent = null, int timeoutSeconds = 10)
+        private IWebElement FindElement(By locator, IWebElement parent = null, int timeoutSeconds = 5)
         {
             // WebDriverWait enables us to wait for the specified condition to be true
             // within a given time period.
